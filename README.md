@@ -1,2 +1,1 @@
 # google-homepage
-$ git init
