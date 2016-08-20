@@ -11,11 +11,19 @@ sliderInt = 1;
 sliderNext = 2;
 
 $(document).ready(function() {
+
 $(".slider > img#1").show("slide", {direction: 'right'}, 500);
-startSlider()
+startSlider();
+
+$(".slider > img").hover(function() {
+  stopLoop();
+}, function() {
+  startSlider();
+})
 });
 
 function startSlider(){
+
   count = $(".slider img").length;
 
   loop = setInterval(function() {
@@ -34,16 +42,6 @@ function startSlider(){
   }, 3000)
 }
 
-function prev() {
-newSlide = sliderInt - 1;
-showSlide(newSlide);
-}
-
-function next() {
-newSlide = sliderInt + 1;
-showSlide(newSlide);
-
-}
 
 function stopLoop() {
   window.clearInterval(loop);
@@ -65,15 +63,21 @@ function showSlide(Id) {
     sliderNext = Id + 1;
     startSlider();
 }
-$(".slider > img").hover(function(){
-  stopLoop();
-  console.log("Inside")
-},
-function() {
- startSlider();
- console.log("Outside")
-})
+
+
+function prev() {
+newSlide = sliderInt - 1;
+showSlide(newSlide);
+}
+
+function next() {
+newSlide = sliderInt + 1;
+showSlide(newSlide);
+
+}
+
   </script>
+}
 </head> 
 <body>
 
@@ -85,8 +89,8 @@ function() {
     <img id="4" src="images/profilePicture.jpg"/>
   </div>
 
-  <a href="#" class="left" onclick="prev(); return false;">Previous</a>
-  <a href="#" class="right" onclick="next(); return false;">Next</a>
+  <a href="#" class="left" onclick="prev()">Previous</a>
+  <a href="#" class="right" onclick="next()">Next</a>
 
 </div>
 </body>
