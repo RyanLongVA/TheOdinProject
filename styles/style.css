@@ -1,3 +1,15 @@
+#title {
+  padding: 1px;
+  background-color: #7AEFEF;
+}
+.row {
+  /*IDK*/
+}
+h1{
+  text-align: center;
+  font-family: fantasy;
+}
+
 body {
   margin:0px;
 }
@@ -13,9 +25,13 @@ body {
 }*/
 
 #container{
+ margin:200px auto;
+ margin-bottom: 0px;
+ margin-left: auto;
+ margin-right: auto;
  display:block;
- height: 192px;
- width:192px;
+ height: auto;
+ width:auto;
 }
 /*.row2 {
   margin: auto;
@@ -25,3 +41,27 @@ body {
  height:10px;
  border: 1px solid black;
 }*/
+button {
+  display:inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  transition-duration: 0.3s;
+  color: white;
+  font-family:"Open Sans",Helvetica,Arial,sans-serif;
+  width:150px;
+  height: 30px;
+  background-color: #555555;
+  font-size:16px;
+}
+button:hover {
+  color:black;
+  background-color: white;
+  border: 1px solid #555555
+}
+#button {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
