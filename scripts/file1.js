@@ -29,17 +29,17 @@ function changeRows() {
   $('#container div').remove();
   var widthVal = prompt('Specify a new value for the width (between 1 and 16)');
   var heightVal = prompt('Specify a new value for the height (between 1 and 16)');
-  while (widthVal > 16) {
-    alert('The width value you chose exceeds 16')
-    widthVal = prompt('Please choose a value between 1 and 16')
+  while (widthVal > 80) {
+    alert('The width value you chose exceeds 80')
+    widthVal = prompt('Please choose a value between 1 and 80')
   }
   while (widthVal < 1) {
     alert('Your width value is invalid')
     widthVal = prompt('Please choose a value larger than 0')
   }
-  while (heightVal > 16) {
-    alert ('The height value you picked exceeded 16')
-    heightVal = prompt('Please choose a value between 1 and 100')
+  while (heightVal > 80) {
+    alert ('The height value you picked exceeded 80')
+    heightVal = prompt('Please choose a value between 1 and 80')
   }
   while (heightVal < 1) {
     alert('Your height value is invalid')
