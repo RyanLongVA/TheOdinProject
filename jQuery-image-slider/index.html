@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+
+<head>
+	<link rel="stylesheet" type="text/css" href="styles/style.css"/>
+	<title>Google</title>
+</head>
+<body>
+	<ul class="nav-bar">
+		<li><a href="web">Web</a></li>
+		<li><a href="images">Images</a></li>
+		<li><a href="videos">Videos</a></li>
+		<li><a href="maps">Maps</a></li>
+		<li><a href="news">News</a></li>
+		<li><a href="shopping">Shopping</a></li>
+		<li><a href="gmail">Gmail</a></li>
+		<li><a href="more">more</a></li>
+	</ul>
+	<div class="img-position">
+	<img src="https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg"/>
+	</div> 
+	<div class="input-button">
+		<input type="text" name="search" placeholder="Search.."/>
+			<div id="google-search">
+				<button type="button">Google Search</button>
+			</div>
+			<div id="feeling"/>
+		<button type="button">I'm Feeling Lucky</button>
+		</div>
+	</div>
+</body>
+</html>			
+=======
+<head>
+  <title> Image Slider </title>
+  <link rel="stylesheet" type="text/css" href="styles/slider.css"/>
+  <script type="text/javascript" src="scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery-ui.min.js">
+    </script>
+  <script type="text/javascript">
+sliderInt = 1;
+sliderNext = 2;
+
+$(document).ready(function() {
+
+$(".slider > img#1").show("slide", {direction: 'right'}, 500);
+startSlider();
+
+$(".slider > img").hover(function() {
+  stopLoop();
+}, function() {
+  startSlider();
+})
+});
+
+function startSlider(){
+
+  count = $(".slider img").length;
+
+  loop = setInterval(function() {
+
+    if(sliderNext > count) {
+      sliderNext = 1;
+      sliderInt = 1;
+    }
+
+    $(".slider img").fadeOut(500);
+    $(".slider img#"+sliderNext).fadeIn(500);
+
+    sliderInt = sliderNext
+    sliderNext = sliderNext + 1;
+
+  }, 3000)
+}
+
+
+function stopLoop() {
+  window.clearInterval(loop);
+}
+
+
+function showSlide(Id) {
+  stopLoop();
+  if(Id > count) {
+    Id= 1;
+    }else if(Id < 1){
+    Id = count;
+    }
+
+    $(".slider img").fadeOut(500);
+    $(".slider img#"+Id).fadeIn(500);
+
+    sliderInt = Id
+    sliderNext = Id + 1;
+    startSlider();
+}
+
+
+function prev() {
+newSlide = sliderInt - 1;
+showSlide(newSlide);
+}
+
+function next() {
+newSlide = sliderInt + 1;
+showSlide(newSlide);
+
+}
+
+  </script>
+}
+</head> 
+<body>
+
+<div class="wrapper">
+  <div class="slider">
+    <img id="1" src="images/Background.JPG"/>
+    <img id="2" src="images/Background2.jpeg"/>
+    <img id="3" src="images/background2.png"/>
+    <img id="4" src="images/profilePicture.jpg"/>
+  </div>
+
+  <a href="#" class="left" onclick="prev()">Previous</a>
+  <a href="#" class="right" onclick="next()">Next</a>
+
+</div>
+</body>
+</html>
+>>>>>>> jQuery-image-slider/master
