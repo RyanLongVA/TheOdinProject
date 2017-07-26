@@ -31,20 +31,27 @@ def first_word (words)
 end
 
 def titleize (words)
-    array1 = words
+    array = words 
+    xwords = ["over", "and", "the"]
+    if (array.include?(" ")) then
     array = words.split(" ")
-    if (array == nil) 
-        array = array1 
+    array[0] = array[0].capitalize
+      for i in (1..(array.length - 1)) do
+
+        if (xwords.include?(array[i])) then 
         
-    for i in (0..array.length)
-      if (array[i].length > 3)
-        array[i] = array[i[0]].capitalize
-    else
-      end
+        else
+         array[i] = array[i].capitalize
+        end
+      end 
+      return array.join(" ")
+    else 
+        array = words.capitalize
+        return array
     end
-    end
-    return array
 end
+
+
 
 
 
